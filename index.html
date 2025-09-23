@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 22%, 32%);
+      }
+    </style>
+  </head>
+  <body class="bg-black justify-normal items-center flex flex-col h-screen">
+    <div class="container bg-white min-w-[100vw] h-screen">
+      <div class="background">
+        <picture>
+          <source media="(min-width: 600px)" srcset="./images/bg-desktop-light.jpg" id="desktop-bg-light" />
+          <source media="(min-width: 600px)" srcset="./images/bg-desktop-dark.jpg" id="desktop-bg-dark" />
+          <img
+            class="w-full h-[30vh] lg:h-full object-cover"
+            src="./images/bg-mobile-light.jpg"
+            alt="background image"
+          />
+        </picture>
+
+        <!-- <picture>
+          <source media="(min-width: 600px)" srcset="./images/bg-desktop-light.jpg" id="desktop-bg-light" />
+          <source media="(min-width: 600px)" srcset="./images/bg-desktop-dark.jpg" id="desktop-bg-dark" />
+          <img
+            class="w-full h-[30vh] lg:h-full object-cover"
+            src="./images/bg-mobile-light.jpg"
+            alt="background image"
+          />
+        </picture> -->
+      </div>
+
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:max-w-[700px] sm:px-28 px-10 py-12" id="form">
+        <div class="flex mt-4 mb-8 justify-between">
+          <h1 class="text-white text-4xl font-bold text tracking-[0.5rem]">TODO</h1>
+          <!-- day and night -->
+          <div class="time flex" id="time">
+            <img
+              src="./images/icon-moon.svg"
+              alt="moon icon"
+              class="w-6 h-6 text-white"
+              id="moon-icon"
+            />
+            <img
+              src="./images/icon-sun.svg"
+              alt="sun icon"
+              class="w-6 h-6 text-white ml-4  hidden"
+              id="sun-icon"
+            />
+          </div>
+        </div>
+
+        <!-- input field -->
+        <div id="field" class="flex justify-center items-center mt-4 bg-white rounded-lg px-6">
+          <div class="border-2 border-white rounded-full p-2 w-6 h-6"></div>
+          <input
+            type="text"
+            placeholder="Create a new todo..."
+            class=" text-gray-500 px-4 py-3 rounded-lg w-full max-w-md border-none outline-none"
+            id="update-task"
+          />
+        </div>
+
+        <!-- To do list -->
+        <div class="list bg-white rounded-lg" id="todo-lists">
+          <ul class="text-gray-800 mt-4 text-[12px] max-h-[300px] overflow-y-auto" style="overflow-y: hidden;">
+            <li id="updated-task" class="flex justify-between items-center px-6 py-4">
+              <span class="items-center flex space-x-5"><img
+                src="./images/icon-check.svg"
+                alt="check icon"
+                id="check-icon"
+                class="w-6 h-6 border-2 border-gray-600 rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-800"
+              />
+                <p class="text-left text-[13px]" id="task">Complete online JavaScript course</p>
+              </span>            
+              <span><img
+                src="./images/icon-cross.svg"
+                alt="cross icon"
+                id="cross-icon"
+                class="w-4 h-4 ml-4"
+                />
+              </span>
+            </li>
+            <hr class="border-t border-gray-300" />
+            
+          </ul>
+            <hr class="border-t border-gray-600" />
+            <div class="text-gray-400 text-[13px] flex justify-between items-center px-6 py-4">
+              <p id="items-left">5 items left</p>
+              <div class="active md:flex space-x-6 text-gray-400 justify-center items-center bg-gray-800 rounded-lg text-[13px] hidden">
+          <p id="filter-all">All</p>
+          <p id="filter-active">Active</p>
+          <p id="filter-completed">Completed</p>
+              </div>
+              <p id="clear-completed">Clear Completed</p>
+            </div>
+        </div>
+
+        <div class="active flex space-x-6 text-gray-400 justify-center items-center mt-4 bg-shite rounded-lg text-[15px] py-4 md:hidden" id="active">
+          <p id="filter-all">All</p>
+          <p id="filter-active">Active</p>
+          <p id="filter-completed">Completed</p>
+        </div>
+        <div class="drag-and-drop flex text-gray-400 justify-center items-center mt-7">
+          <p>Drag and drop to reorder list</p>
+        </div>
+    </div>
+  
+  </body>
+</html>
