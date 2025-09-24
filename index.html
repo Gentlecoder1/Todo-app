@@ -30,24 +30,13 @@
     <div class="container bg-white min-w-[100vw] h-screen">
       <div class="background">
         <picture>
-          <source media="(min-width: 600px)" srcset="./images/bg-desktop-light.jpg" id="desktop-bg-light" />
-          <source media="(min-width: 600px)" srcset="./images/bg-desktop-dark.jpg" id="desktop-bg-dark" />
+          <source media="(min-width: 800px)" srcset="./images/bg-desktop-light.jpg" id="desktop-bg-light" />
           <img
             class="w-full h-[30vh] lg:h-full object-cover"
             src="./images/bg-mobile-light.jpg"
             alt="background image"
           />
         </picture>
-
-        <!-- <picture>
-          <source media="(min-width: 600px)" srcset="./images/bg-desktop-light.jpg" id="desktop-bg-light" />
-          <source media="(min-width: 600px)" srcset="./images/bg-desktop-dark.jpg" id="desktop-bg-dark" />
-          <img
-            class="w-full h-[30vh] lg:h-full object-cover"
-            src="./images/bg-mobile-light.jpg"
-            alt="background image"
-          />
-        </picture> -->
       </div>
 
       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:max-w-[700px] sm:px-28 px-10 py-12" id="form">
@@ -72,7 +61,7 @@
 
         <!-- input field -->
         <div id="field" class="flex justify-center items-center mt-4 bg-white rounded-lg px-6">
-          <div class="border-2 border-white rounded-full p-2 w-6 h-6"></div>
+          <div class="border-2 border-gray-400  rounded-full p-2 w-6 h-6"></div>
           <input
             type="text"
             placeholder="Create a new todo..."
@@ -82,18 +71,23 @@
         </div>
 
         <!-- To do list -->
-        <div class="list bg-white rounded-lg" id="todo-lists">
-          <ul class="text-gray-800 mt-4 text-[12px] max-h-[300px] overflow-y-auto" style="overflow-y: hidden;">
-            <li id="updated-task" class="flex justify-between items-center px-6 py-4">
-              <span class="items-center flex space-x-5"><img
-                src="./images/icon-check.svg"
-                alt="check icon"
-                id="check-icon"
-                class="w-6 h-6 border-2 border-gray-600 rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-800"
-              />
-                <p class="text-left text-[13px]" id="task">Complete online JavaScript course</p>
-              </span>            
-              <span><img
+        <div class="list bg-white rounded-lg shadow-md shadow-black  " id="todo-lists">
+          <ul id="todo-tasks" class="text-gray-800 mt-4 text-[12px] max-h-[300px] overflow-y-auto" style="overflow-y: hidden;">
+            <li class="tasks group cursor-pointer flex justify-between items-center px-6 py-4"
+            >
+              <span class="updated-task flex space-x-2">
+                <button id="btn" class="checkTask items-center flex cursor-pointer border-2 border-gray-200 group-hover:border-gray-400 rounded-full w-6 h-6">
+                  <img
+                    src="./images/icon-check.svg"
+                    alt="check icon"
+                    id=""
+                    class="check-icon w-full h-full hidden rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-800"
+                  />
+                </button>            
+                <p class="text-left text-[13px]"  id="task-text">Complete online JavaScript course</p>
+              </span>
+
+              <span class="hidden group-hover:block"><img
                 src="./images/icon-cross.svg"
                 alt="cross icon"
                 id="cross-icon"
@@ -101,22 +95,24 @@
                 />
               </span>
             </li>
-            <hr class="border-t border-gray-300" />
-            
+            <hr class="border-t border-gray-300" /> 
           </ul>
-            <hr class="border-t border-gray-600" />
-            <div class="text-gray-400 text-[13px] flex justify-between items-center px-6 py-4">
-              <p id="items-left">5 items left</p>
-              <div class="active md:flex space-x-6 text-gray-400 justify-center items-center bg-gray-800 rounded-lg text-[13px] hidden">
-          <p id="filter-all">All</p>
-          <p id="filter-active">Active</p>
-          <p id="filter-completed">Completed</p>
-              </div>
-              <p id="clear-completed">Clear Completed</p>
+
+          <!-- footer for desktop -->
+          <hr class="border-t border-gray-600" />
+          <div class="text-gray-400 text-[13px] flex justify-between items-center px-6 py-4">
+            <p id="items-left">5 items left</p>
+            <div class="active md:flex space-x-6 text-gray-400 justify-center items-center bg-gray-800 rounded-lg text-[13px] hidden">
+              <p id="filter-all">All</p>
+              <p id="filter-active">Active</p>
+              <p id="filter-completed">Completed</p>
             </div>
+            <p id="clear-completed">Clear Completed</p>
+          </div>
         </div>
 
-        <div class="active flex space-x-6 text-gray-400 justify-center items-center mt-4 bg-shite rounded-lg text-[15px] py-4 md:hidden" id="active">
+        <!-- footer for mobile -->
+        <div class="active shadow-md shadow-black flex space-x-6 text-gray-400 justify-center items-center mt-4 bg-shite rounded-lg text-[15px] py-4 md:hidden" id="active">
           <p id="filter-all">All</p>
           <p id="filter-active">Active</p>
           <p id="filter-completed">Completed</p>

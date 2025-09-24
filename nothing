@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // const filterCompleted = document.getElementById("filter-completed");
   const crossIcon = document.getElementById("cross-icon");
 
+  const task = document.getElementById("task");
   const taskForm = document.getElementById("form");
+  const updateTask = document.getElementById("update-task");
   const field = document.getElementById("field");
   const active = document.getElementById("active");
   const list = document.querySelector(".list");
   const sunIcon = document.getElementById("sun-icon");
   const moonIcon = document.getElementById("moon-icon");
+  const time = document.getElementById("time");
   const container = document.querySelector(".container");
   
 
@@ -31,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     list.classList.toggle("bg-white", !isDarkMode);
     list.classList.toggle("bg-gray-800", isDarkMode);
 
-    const allTaskTexts = document.querySelectorAll("#task-text, .updated-task p");
-    allTaskTexts.forEach(taskText => {
+    const allUpdatedTask = document.querySelectorAll(".task-text");
+    allUpdatedTask.forEach(taskText => {
       taskText.classList.toggle("text-gray-800", !isDarkMode);
       taskText.classList.toggle("text-white", isDarkMode);
     });
@@ -59,11 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
   taskList.forEach((task) => {
     const checkIcon = task.querySelector(".check-icon");
     const checkTask = task.querySelector(".checkTask"); 
-    const todo = task.querySelector("#task-text"); 
+    // const todo = task.querySelector("#task-text"); 
 
     checkTask.addEventListener("click", () => {
       checkIcon.classList.toggle("hidden");
-      todo.classList.toggle("line-through");
+      // todo.classList.toggle("line-through");
+      toggleTheme();
     })
   })
 });
