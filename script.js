@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
   moonIcon.addEventListener("click", () => toggleTheme(true));
   sunIcon.addEventListener("click", () => toggleTheme(false));
 
-  
 
   const taskInput = document.getElementById("task-input");
   const todoTasks = document.getElementById("todo-tasks");
@@ -126,6 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // increment items left
     todonum++;
     updateItemsLeft();
+
+    toggleTheme(isDarkMode);
   }
     
   // addtask on enter
