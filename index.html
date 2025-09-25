@@ -40,7 +40,7 @@
       </div>
 
       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:max-w-[700px] sm:px-28 px-10 py-12" id="form">
-        <div class="flex mt-4 mb-8 justify-between">
+        <div class="flex mt-4 mb-8 lg:mb-14 lg:pt-14 justify-between">
           <h1 class="text-white text-4xl font-bold text tracking-[0.5rem]">TODO</h1>
           <!-- day and night -->
           <div class="time flex" id="time">
@@ -60,48 +60,25 @@
         </div>
 
         <!-- input field -->
-        <div id="field" class="flex justify-center items-center mt-4 bg-white rounded-lg px-6">
+        <div id="field" class="flex justify-center shadow-md shadow-black items-center mt-4 bg-white rounded-lg px-6">
           <div class="border-2 border-gray-400  rounded-full p-2 w-6 h-6"></div>
           <input
             type="text"
             placeholder="Create a new todo..."
-            class=" text-gray-500 px-4 py-3 rounded-lg w-full max-w-md border-none outline-none"
-            id="update-task"
+            class="text-gray-500 px-4 py-3 rounded-lg w-full max-w-md border-none outline-none"
+            id="task-input"
           />
         </div>
 
         <!-- To do list -->
-        <div class="list bg-white rounded-lg shadow-md shadow-black  " id="todo-lists">
+        <div class="list bg-white rounded-lg shadow-md shadow-black" id="todo-lists">
           <ul id="todo-tasks" class="text-gray-800 mt-4 text-[12px] max-h-[300px] overflow-y-auto" style="overflow-y: hidden;">
-            <li class="tasks group cursor-pointer flex justify-between items-center px-6 py-4"
-            >
-              <span class="updated-task flex space-x-2">
-                <button id="btn" class="checkTask items-center flex cursor-pointer border-2 border-gray-200 group-hover:border-gray-400 rounded-full w-6 h-6">
-                  <img
-                    src="./images/icon-check.svg"
-                    alt="check icon"
-                    id=""
-                    class="check-icon w-full h-full hidden rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-800"
-                  />
-                </button>            
-                <p class="text-left text-[13px]"  id="task-text">Complete online JavaScript course</p>
-              </span>
-
-              <span class="hidden group-hover:block"><img
-                src="./images/icon-cross.svg"
-                alt="cross icon"
-                id="cross-icon"
-                class="w-4 h-4 ml-4"
-                />
-              </span>
-            </li>
-            <hr class="border-t border-gray-300" /> 
+             <!-- dynamic todo lists -->
           </ul>
 
           <!-- footer for desktop -->
-          <hr class="border-t border-gray-600" />
           <div class="text-gray-400 text-[13px] flex justify-between items-center px-6 py-4">
-            <p id="items-left">5 items left</p>
+            <p id="items-left">0 items left</p>
             <div class="active md:flex space-x-6 text-gray-400 justify-center items-center bg-gray-800 rounded-lg text-[13px] hidden">
               <p id="filter-all">All</p>
               <p id="filter-active">Active</p>
